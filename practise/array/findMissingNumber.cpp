@@ -19,15 +19,38 @@ int findMissingNumber(int arr[], int size){
             return ans = i+1;
            
         }
-    }
+    } 
 
     
 }
+
+int missingNoWithSum(int arr[], int size){
+    int N = size + 1;
+    int total = (N)*(N+1)/2;
+    for (int i = 0; i < size; i++)
+    {
+        total -=arr[i];
+    }
+    cout<<"total: "<<total<<endl;
+    return total;
+}
+int missingNoWithTotalAnd2(int arr[], int size){
+    int total = 1;
+    for (int i = 2; i < size+1 ; i++)
+    {
+        total +=i;
+        total -= arr[i-2];
+    }
+    cout<<"total: "<<total<<endl;
+    return total;
+}
 int main(){
-    int arr[] = {1,3,4,5,6,8,9,10};
+    int arr[] = {1,3};
     int size = sizeof(arr)/sizeof(arr[0]);
     int misingValue;
-    misingValue = findMissingNumber(arr,size);
+    // misingValue = findMissingNumber(arr,size);
+    // misingValue = missingNoWithSum(arr,size);
+    misingValue = missingNoWithTotalAnd2(arr,size);
     cout<<"Missing Value is : "<<misingValue<<endl;
     
     return 1;
