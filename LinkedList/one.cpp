@@ -2,25 +2,25 @@
 
 using namespace std;
 
-class node{
+class Node{
     public:
     int data;
-    node* next;
+    Node* next;
     
-    node(int val){
-        data = val;
-        next = NULL;
+    Node(int val){
+        this->data = val;
+        this->next = NULL;
     }
 };
 
-void insertAtTail(node* &head, int val){
-    node* n = new node(val);
+void insertAtTail(Node* &head, int val){
+    Node* n = new Node(val);
     if(head == NULL){
         head = n;
         return;
     }
 
-    node* temp = head;
+    Node* temp = head;
     while(temp->next!= NULL){
         temp = temp->next;
     }
@@ -28,8 +28,8 @@ void insertAtTail(node* &head, int val){
 }
 
 
-void display(node* head){
-    node* temp = head;
+void display(Node* head){
+    Node* temp = head;
     while(temp != NULL){
         cout<<temp->data<<" ";
         temp = temp->next;
@@ -40,7 +40,7 @@ void display(node* head){
 
 int main(){
 
-    node* head = NULL;
+    Node* head = NULL;
     insertAtTail(head,1);
     insertAtTail(head,2);
     insertAtTail(head,3);

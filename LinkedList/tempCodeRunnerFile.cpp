@@ -1,2 +1,2 @@
-
-    printNode(tail);
+ode = currentNode->next;
+        // count++;
